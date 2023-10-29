@@ -40,6 +40,7 @@ const Navbar = () => {
             </SheetContent>
           </Sheet>
         </div>
+        {/** desktop screens */}
         <div className="relative w-8 h-8">
           <Image src="/logo.svg" alt="logo" fill className="rounded-full" />
         </div>
