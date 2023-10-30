@@ -3,7 +3,8 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
-
+import { signIn } from "next-auth/react";
+import { useRouter } from "next/navigation";
 import { loginSchema } from "@/lib/validation/authValidation";
 import { Button } from "@/components/ui/button";
 import {
@@ -16,7 +17,9 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+
 const LoginForm = () => {
+  const router = useRouter();
   const form = useForm<z.infer<typeof loginSchema>>({
     resolver: zodResolver(loginSchema),
     defaultValues: {
@@ -26,8 +29,19 @@ const LoginForm = () => {
   });
 
   // 2. Define a submit handler.
-  function onSubmit(values: z.infer<typeof loginSchema>) {
+  async function onSubmit(values: z.infer<typeof loginSchema>) {
     console.log(values);
+    const res = await signIn("credentials", {
+      email: values.email,
+      password: values.password,
+      redirect: false,
+    });
+
+    console.log({ res });
+    if (!res?.error) {
+      router.push("/")
+      router.refresh()
+    }
   }
   return (
     <Form {...form}>

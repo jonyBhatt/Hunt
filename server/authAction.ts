@@ -1,8 +1,9 @@
 "use server";
 
 import prisma from "@/lib/db/prisma";
-import { CreateUser } from "@/types";
+import { CreateUser, LoginUser } from "@/types";
 import bcrypt from "bcrypt";
+import jwt from 'jsonwebtoken'
 
 export async function createUser({
   name,
@@ -25,5 +26,29 @@ export async function createUser({
     console.log(newUser);
   } catch (error) {
     console.log(error);
+  }
+}
+
+export async function Login({ email, password }: LoginUser) {
+  try {
+    //check is user exist
+    let user = await prisma.user.findUnique({ where: { email } });
+    if (!user) return {message:"user does not exists"}
+    const validPass = await bcrypt.compare(password, user.password);
+    if (!validPass) return {message:"Invalid password!"}
+
+    const tokenData = { id: user.id }
+    
+    const token = await jwt.sign(tokenData, process.env.JWT_SECRET!, {
+      expiresIn: "1d",
+    });
+
+    
+
+  } catch (error) {
+    // throw new Error(`Error in login ${error}`);
+    return {
+      error:error
+    }
   }
 }
