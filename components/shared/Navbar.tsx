@@ -2,6 +2,7 @@ import { MenuIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { getServerSession } from "next-auth";
 import { Button } from "../ui/button";
 import {
   Sheet,
@@ -12,8 +13,10 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import MenuItems from "./MenuItems";
+import Logout from "./Logout";
 
-const Navbar = () => {
+const Navbar = async () => {
+  const session = await getServerSession();
   return (
     <nav className="py-5 px-4 shadow-md ">
       <div className="flex justify-between items-center">
@@ -56,15 +59,23 @@ const Navbar = () => {
           <Link href="/">About</Link>
         </div>
         <div className="flex items-center gap-3">
-          <Button variant="outline">
-            <Link href="/signin">Sign In</Link>
-          </Button>
+          {session && (
+            <>
+              {" "}
+              <Logout />
+            </>
+          )}
+          {!session && (
+            <>
+              <Button variant="outline">
+                <Link href="/signin">Sign In</Link>
+              </Button>
 
-          <Button variant="default">
-            <Link href="/signup">
-              Sign Up
-            </Link>
-          </Button>
+              <Button variant="default">
+                <Link href="/signup">Sign Up</Link>
+              </Button>
+            </>
+          )}
         </div>
       </div>
     </nav>
