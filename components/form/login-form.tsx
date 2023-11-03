@@ -39,7 +39,7 @@ const LoginForm = () => {
 
     console.log({ res });
     if (!res?.error) {
-      router.push("/")
+      router.push("/onboard")
       router.refresh()
     }
   }

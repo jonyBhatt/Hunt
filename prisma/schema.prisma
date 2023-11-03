@@ -24,3 +24,21 @@ model User {
   password String
   role     UserEnum @default(USER)
 }
+
+model Mentor {
+  id        String  @id @default(auto()) @map("_id") @db.ObjectId
+  firstname String
+  lastname  String
+  email     String  @unique
+  bio       String
+  imageUrl  String?
+  subject   String
+  skills    String
+
+  onboard Boolean @default(false)
+
+  role UserEnum @default(MENTOR)
+
+  created_At DateTime @default(now())
+  updated_At DateTime @default(now())
+}

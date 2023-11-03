@@ -8,7 +8,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import Image from 'next/image';
-import { sans } from '@/lib/fonts/font';
+import { rale } from '@/lib/fonts/font';
 import { cn } from '@/lib/utils';
 import { FindTypes } from '@/types';
 
@@ -23,7 +23,7 @@ const FindCard = ({ title, content, url}:FindTypes) => {
         <CardHeader>
           <CardTitle className='text-2xl font-bold text-center'>{title}</CardTitle>
         </CardHeader>
-        <CardContent className={cn(sans.className, "text-center")}>
+        <CardContent className={cn(rale.className, "text-center")}>
           <p className="text-xs text-[#666666]">
             {content}
           </p>

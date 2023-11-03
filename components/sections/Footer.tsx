@@ -1,4 +1,4 @@
-import { sans } from "@/lib/fonts/font";
+import { rale } from "@/lib/fonts/font";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import React from "react";
@@ -6,7 +6,7 @@ import { Facebook, Twitter, Linkedin } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className={cn(sans.className, "py-5 bg-primary container mx-auto")}>
+    <footer className={cn(rale.className, "py-5 bg-primary container mx-auto")}>
       <div className="flex justify-between items-center">
         <span className="text-sm text-white">Copyright 2023 Hunt</span>
         <div className="flex gap-6 text-white items-center ">

@@ -1,6 +1,8 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { kanit } from "@/lib/fonts/font";
+import { kanit, rale } from "@/lib/fonts/font";
+import { getServerSession } from "next-auth";
+import AuthProvider from "@/utils/Provider";
 
 export const metadata: Metadata = {
   title: "Hunt",
@@ -12,9 +14,12 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const session = await getServerSession();
   return (
     <html lang="en">
-      <body className={kanit.className}>{children}</body>
+      <body className={`${kanit.variable} ${rale.variable}`}>
+        <AuthProvider session={session}>{children}</AuthProvider>
+      </body>
     </html>
   );
 }

@@ -18,7 +18,7 @@ import Logout from "./Logout";
 const Navbar = async () => {
   const session = await getServerSession();
   return (
-    <nav className="py-5 px-4 shadow-md ">
+    <nav className="py-5 px-4 shadow-md font-Kanit ">
       <div className="flex justify-between items-center">
         {/** medium and sm devices */}
         <div className="lg:hidden md:block">

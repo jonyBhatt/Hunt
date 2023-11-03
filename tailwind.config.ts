@@ -1,4 +1,5 @@
-module.exports = {
+import { withUt } from "uploadthing/tw";
+module.exports = withUt({
   darkMode: ["class"],
   content: [
     "./pages/**/*.{ts,tsx}",
@@ -84,10 +85,10 @@ module.exports = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       fontFamily: {
-        sans:['var(--font-kanit)']
-      }
+        Kanit: ["var(--font-Kanit)"],
+        Rale: ["var(--font-Raleway)"],
+      },
     },
-    
   },
   plugins: [require("tailwindcss-animate")],
-};
+});

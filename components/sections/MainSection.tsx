@@ -8,7 +8,7 @@ const MainSection = () => {
     return prev.reviews.length > current.reviews.length ? prev : current;
   });
   return (
-    <section className="mx-auto max-w-4xl">
+    <section className="mx-auto max-w-4xl font-Rale">
       <div className="flex justify-between w-full">
         <div className=" w-full border-r border-r-gray-500 pr-4">
           <div className="flex justify-between items-center">
@@ -17,7 +17,7 @@ const MainSection = () => {
           </div>
           {featuredPost.map((item) => (
             <div
-              className="flex items-center justify-between gap-4 my-4"
+              className="flex items-center justify-between gap-4 my-4 font-Rale"
               key={item.name}
             >
               <div className="flex items-center gap-4">
@@ -25,7 +25,7 @@ const MainSection = () => {
                   <Image src={item.image} alt="image" fill />
                 </div>
                 <div>
-                  <p>{item.name}</p>
+                  <p className="font-Kanit font-bold">{item.name}</p>
                   <span className="text-sm font-light truncate">
                     {item.content}
                   </span>
