@@ -110,7 +110,40 @@
     background-size: cover;
     background-position: center;
   }
-  .custom_border{
-    @apply rounded-tr-2xl rounded-tl-2xl
+  .custom_border {
+    @apply rounded-tr-2xl rounded-tl-2xl;
   }
+
+  .link {
+    margin: 20px 0px !important;
+    padding: 10px 25px;
+    transition-property: all;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+    transition-delay: 0.2s;
+  }
+  .link:hover {
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgb(242, 240, 243) 0%,
+      rgba(255, 255, 255, 1) 100%
+    );
+  }
+  .active {
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgb(242, 240, 243) 0%,
+      rgba(255, 255, 255, 1) 100%
+    );
+  }
+
+  .flex_1{
+    flex:1
+  }
+  .flex_3{
+    flex:3
+  }
+
 }

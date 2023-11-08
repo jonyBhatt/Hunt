@@ -149,3 +149,61 @@ export const featuredPost = [
     vote: 270,
   },
 ];
+
+export const adminSideBar = [
+  {
+    title: "Pages",
+    list: [
+      {
+        title: "Dashboard",
+        url: "/admin-dashboard",
+        icon: "/svgs/dashboard.svg",
+      },
+      {
+        title: "Users",
+        url: "/admin-dashboard/users",
+        icon: "/svgs/user.svg",
+      },
+      {
+        title: "Post",
+        url: "/admin-dashboard/posts",
+        icon: "/svgs/post.svg",
+      },
+    ],
+  },
+  {
+    title: "Analytics",
+    list: [
+      {
+        title: "Revenue",
+       url: "/dashboard/revenue",
+        icon: "/svgs/revenue.svg",
+      },
+      {
+        title: "Reports",
+       url: "/dashboard/reports",
+        icon: "/svgs/report.svg",
+      },
+      {
+        title: "Teams",
+       url: "/dashboard/teams",
+        icon: "/svgs/teams.svg",
+      },
+    ],
+  },
+  {
+    title: "User",
+    list: [
+      {
+        title: "Settings",
+       url: "/dashboard/settings",
+        icon: "/svgs/settings.svg",
+      },
+      {
+        title: "Help",
+       url: "/dashboard/help",
+        icon: "/svgs/help.svg",
+      },
+    ],
+  },
+];

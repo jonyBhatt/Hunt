@@ -1,3 +1,5 @@
+import { string } from "zod";
+
 export type FindTypes = {
   title: string;
   content: string;
@@ -25,10 +27,22 @@ export type UserData = {
 };
 
 export type MentorOnBoardData = {
-  firstname: string,
-  lastname: string,
-  email: string,
-  subject: string,
-  skills: string,
-  bio:string
-}
+  firstname: string;
+  lastname: string;
+  email: string;
+  subject: string;
+  skills: string;
+  bio: string;
+};
+
+export type SideBarProps = {
+  title: string;
+  url: string;
+  icon: string;
+};
+export type Payment = {
+  id: string;
+  description: string;
+  status: "pending" | "processing" | "success" | "failed";
+  email: string;
+};
