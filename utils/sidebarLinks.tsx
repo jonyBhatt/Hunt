@@ -16,7 +16,7 @@ const MenuLink = ({ icon, title, url }: SideBarProps) => {
           pathName === url && "active"
         }`}
       >
-        <Image src={icon} alt="icon" width={30} height={30} />
+        {icon}
         <span className="font-medium font-Rale">{title}</span>
       </Link>
     </>

@@ -76,6 +76,9 @@
   a {
     @apply font-bold;
   }
+  table td {
+    @apply p-3 text-start;
+  }
 }
 
 @layer components {
@@ -118,32 +121,31 @@
     margin: 20px 0px !important;
     padding: 10px 25px;
     transition-property: all;
-    transition-duration: 0.5s;
+    transition-duration: 0.2s;
     transition-timing-function: ease;
     transition-delay: 0.2s;
   }
   .link:hover {
-    background: linear-gradient(
-      90deg,
-      rgba(0, 0, 0, 1) 0%,
-      rgb(242, 240, 243) 0%,
-      rgba(255, 255, 255, 1) 100%
-    );
+    background-color: #252525;
+    color: #fff;
   }
   .active {
-    background: linear-gradient(
-      90deg,
-      rgba(0, 0, 0, 1) 0%,
-      rgb(242, 240, 243) 0%,
-      rgba(255, 255, 255, 1) 100%
-    );
+    background-color: #252525;
+    color: #fff;
+  }
+  .active:hover {
+    background-color: #252525;
+    color: #fff;
+  }
+  .bg_img {
+    background-color: #813867;
+    background-image: linear-gradient(315deg, #813867 0%, #ebebeb 74%);
   }
 
-  .flex_1{
-    flex:1
+  .flex_1 {
+    flex: 1;
   }
-  .flex_3{
-    flex:3
+  .flex_3 {
+    flex: 3;
   }
-
 }

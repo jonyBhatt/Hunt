@@ -1,3 +1,4 @@
+import { IconNode } from "lucide-react";
 import { string } from "zod";
 
 export type FindTypes = {
@@ -38,9 +39,9 @@ export type MentorOnBoardData = {
 export type SideBarProps = {
   title: string;
   url: string;
-  icon: string;
+  icon: JSX.Element;
 };
-export type Payment = {
+export type Post = {
   id: string;
   description: string;
   status: "pending" | "processing" | "success" | "failed";

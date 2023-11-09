@@ -1,3 +1,13 @@
+import {
+  LayoutDashboard,
+  User,
+  MessageSquareDashed,
+  BookOpen,
+  BarChart2,
+  Users,
+  Cog,
+  HelpCircle
+} from "lucide-react";
 export const topics = [
   {
     id: 1,
@@ -157,17 +167,17 @@ export const adminSideBar = [
       {
         title: "Dashboard",
         url: "/admin-dashboard",
-        icon: "/svgs/dashboard.svg",
+        icon: <LayoutDashboard />,
       },
       {
         title: "Users",
         url: "/admin-dashboard/users",
-        icon: "/svgs/user.svg",
+        icon: <User />,
       },
       {
         title: "Post",
         url: "/admin-dashboard/posts",
-        icon: "/svgs/post.svg",
+        icon: <MessageSquareDashed />,
       },
     ],
   },
@@ -176,18 +186,18 @@ export const adminSideBar = [
     list: [
       {
         title: "Revenue",
-       url: "/dashboard/revenue",
-        icon: "/svgs/revenue.svg",
+        url: "/dashboard/revenue",
+        icon: <BarChart2 />,
       },
       {
         title: "Reports",
-       url: "/dashboard/reports",
-        icon: "/svgs/report.svg",
+        url: "/dashboard/reports",
+        icon: <BookOpen />,
       },
       {
         title: "Teams",
-       url: "/dashboard/teams",
-        icon: "/svgs/teams.svg",
+        url: "/dashboard/teams",
+        icon: <Users />,
       },
     ],
   },
@@ -196,13 +206,13 @@ export const adminSideBar = [
     list: [
       {
         title: "Settings",
-       url: "/dashboard/settings",
-        icon: "/svgs/settings.svg",
+        url: "/dashboard/settings",
+        icon: <Cog />,
       },
       {
         title: "Help",
-       url: "/dashboard/help",
-        icon: "/svgs/help.svg",
+        url: "/dashboard/help",
+        icon: <HelpCircle />,
       },
     ],
   },

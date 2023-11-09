@@ -23,6 +23,9 @@ model User {
   email    String   @unique
   password String
   role     UserEnum @default(USER)
+
+  posts    Post[]
+  comments Comment[]
 }
 
 model Mentor {
@@ -41,4 +44,33 @@ model Mentor {
 
   created_At DateTime @default(now())
   updated_At DateTime @default(now())
+}
+
+model Post {
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  description String
+
+  categoryName String
+  category     Category @relation(fields: [categoryName], references: [name])
+
+  userId String @db.ObjectId
+  user   User   @relation(fields: [userId], references: [id])
+
+  comments Comment[]
+}
+
+model Category {
+  id    String @id @default(auto()) @map("_id") @db.ObjectId
+  name  String @unique
+  posts Post[]
+}
+
+model Comment {
+  id      String @id @default(auto()) @map("_id") @db.ObjectId
+  content String
+  userId  String @db.ObjectId
+  user    User   @relation(fields: [userId], references: [id])
+  postId  String @db.ObjectId
+  post    Post   @relation(fields: [postId], references: [id])
 }

@@ -13,16 +13,11 @@ import {
 import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
 import { ArrowUpDown, MoreHorizontal } from "lucide-react";
+import { Post } from "@/types";
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
-export type Payment = {
-  id: string;
-  description: string;
-  status: "pending" | "processing" | "success" | "failed";
-  email: string;
-};
 
-export const columns: ColumnDef<Payment>[] = [
+export const columns: ColumnDef<Post>[] = [
   {
     id: "select",
     header: ({ table }) => (
@@ -44,10 +39,26 @@ export const columns: ColumnDef<Payment>[] = [
   },
   {
     accessorKey: "status",
-    header: "Status",
-    cell: ({ row }) => (
-      <div className="capitalize">{row.getValue("status")}</div>
-    ),
+    header: () => <div className="text-center">Status</div>,
+    cell: ({ row }) => {
+      const status = row.getValue("status");
+
+      return (
+        <div
+          className={`capitalize text-center py-1 px-4  rounded-full ${
+            status === "success"
+              ? "bg-green-600 text-white"
+              : status === "pending"
+              ? "bg-orange-600 text-white"
+              : status === "processing"
+              ? "bg-yellow-300 text-black"
+              : "bg-red-700 text-white"
+          }`}
+        >
+          {status}
+        </div>
+      );
+    },
   },
   {
     accessorKey: "email",
