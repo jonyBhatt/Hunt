@@ -17,15 +17,23 @@ enum UserEnum {
 }
 
 model User {
-  id       String   @id @default(auto()) @map("_id") @db.ObjectId
-  name     String
-  username String   @unique
-  email    String   @unique
-  password String
-  role     UserEnum @default(USER)
+  id              String   @id @default(auto()) @map("_id") @db.ObjectId
+  name            String
+  username        String   @unique
+  email           String   @unique
+  password        String
+  role            UserEnum @default(USER)
+  hasNotification Boolean?
+  following       String[] @db.ObjectId
 
-  posts    Post[]
-  comments Comment[]
+  // isActive Boolean? @default(false)
+
+  createdAt DateTime? @default(now())
+  updateAt  DateTime? @default(now())
+
+  posts         Post[]
+  comments      Comment[]
+  notifications Notification[]
 }
 
 model Mentor {
@@ -47,9 +55,10 @@ model Mentor {
 }
 
 model Post {
-  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
   title       String
   description String
+  likes       String[] @db.ObjectId
 
   categoryName String
   category     Category @relation(fields: [categoryName], references: [name])
@@ -73,4 +82,14 @@ model Comment {
   user    User   @relation(fields: [userId], references: [id])
   postId  String @db.ObjectId
   post    Post   @relation(fields: [postId], references: [id])
+}
+
+model Notification {
+  id   String @id @default(auto()) @map("_id") @db.ObjectId
+  body String
+
+  userId String @db.ObjectId
+  user   User   @relation(fields: [userId], references: [id])
+
+  createdAt DateTime @default(now())
 }

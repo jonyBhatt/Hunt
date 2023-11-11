@@ -13,3 +13,7 @@ openssl rand -base64 32
 # Feature
 
 **Project Board**
+
+# Deafult User account will not be active after admin review his account will active otherwise passive.
+> When user in passive mode he can not post, comment or contact with mentor
+> We can check with user.isActive if admin click on active then isActive will  be true otherwise false

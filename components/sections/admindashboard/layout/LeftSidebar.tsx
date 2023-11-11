@@ -1,3 +1,4 @@
+import Logout from "@/components/shared/Logout";
 import { Button } from "@/components/ui/button";
 import { adminSideBar } from "@/utils/constants";
 import MenuLink from "@/utils/sidebarLinks";
@@ -36,7 +37,7 @@ const LeftSidebar = () => {
           </li>
         ))}
       </ul>
-      <Button>Log Out</Button>
+      <Logout />
     </div>
   );
 };
