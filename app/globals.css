@@ -148,4 +148,13 @@
   .flex_3 {
     flex: 3;
   }
+  .bg-radial {
+    background: rgb(0, 0, 0);
+    background: radial-gradient(
+      circle,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(251, 218, 248, 1) 0%,
+      rgba(255, 255, 255, 1) 100%
+    );
+  }
 }

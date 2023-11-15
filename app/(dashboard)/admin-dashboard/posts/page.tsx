@@ -47,7 +47,7 @@ const Post = () => {
           </tr>
         </tbody>
       </table>
-      <Pagination />
+      {/* <Pagination /> */}
     </div>
   );
 };

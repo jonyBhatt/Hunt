@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/sheet";
 import MenuItems from "./MenuItems";
 import Logout from "./Logout";
+import Search from "./SearchBar";
 
 const Navbar = async () => {
   const session = await getServerSession();
@@ -47,8 +48,8 @@ const Navbar = async () => {
         <div className="relative w-8 h-8">
           <Image src="/logo.svg" alt="logo" fill className="rounded-full" />
         </div>
-        <div className="border lg:block xs:hidden  md:hidden sm:hidden border-gray-400/75 py-2 px-4 max-w-xs rounded-md w-full">
-          Search components
+        <div className=" lg:block xs:hidden  md:hidden sm:hidden  max-w-xs  w-full">
+          <Search placeholder="Search for help...." />
         </div>
         <div className="lg:flex md:hidden sm:hidden xs:hidden gap-4 items-center">
           <Link href="/">Products</Link>

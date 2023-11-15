@@ -11,13 +11,14 @@ import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import axios from "axios";
 import {
   Select,
   SelectTrigger,
@@ -74,8 +75,15 @@ const MentorBoard = () => {
   };
 
   // 2. Define a submit handler.
-  function onSubmit(values: z.infer<typeof FormDataSchema>) {
-    console.log(values);
+  async function onSubmit(values: z.infer<typeof FormDataSchema>) {
+       console.log(values);
+    try {
+      const res = await axios.post("/api/onboard", values);
+      console.log(res.data);
+    } catch (error) {
+      console.log(error);
+    }
+
   }
   return (
     <section className="absolute inset-0 flex flex-col justify-between p-24">
@@ -264,7 +272,7 @@ const MentorBoard = () => {
                   />
                 </div>
 
-                <div className="sm:col-span-3">
+                <div className="sm:col-span-12">
                   <FormField
                     control={form.control}
                     name="bio"
@@ -272,12 +280,7 @@ const MentorBoard = () => {
                       <FormItem className="w-full">
                         <FormLabel>Bio</FormLabel>
                         <FormControl>
-                          <Input
-                            type="text"
-                            placeholder="Bio"
-                            {...field}
-                            className="w-full"
-                          />
+                          <Textarea {...field} rows={10} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>

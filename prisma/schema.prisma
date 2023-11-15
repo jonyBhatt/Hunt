@@ -25,7 +25,7 @@ model User {
   role            UserEnum @default(USER)
   hasNotification Boolean?
   following       String[] @db.ObjectId
-
+  onboard         Boolean  @default(false)
   // isActive Boolean? @default(false)
 
   createdAt DateTime? @default(now())
@@ -46,7 +46,7 @@ model Mentor {
   subject   String
   skills    String
 
-  onboard Boolean @default(false)
+  isLive Boolean @default(false)
 
   role UserEnum @default(MENTOR)
 

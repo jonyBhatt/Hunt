@@ -51,8 +51,6 @@ const OnBoard = () => {
   );
 };
 
-const showPage = () => {
-  return <div>Hello World</div>;
-};
+
 
 export default OnBoard;

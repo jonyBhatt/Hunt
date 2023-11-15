@@ -6,9 +6,10 @@ import Image from "next/image";
 import Link from "next/link";
 
 const User = async ({ searchParams }: any) => {
-  const q = searchParams.q || ""
-  const users = await FetchUser(q);
-  // console.log(users);
+  const q = searchParams.q || "";
+  const page = searchParams.page || 1;
+  const {users, totalUser} = await FetchUser(q, page);
+  console.log(users, totalUser);
 
   return (
     <div className="bg-slate-200 p-5 rounded-md mt-5 font-Rale">
@@ -57,7 +58,7 @@ const User = async ({ searchParams }: any) => {
           </table>
         ))}
 
-      <Pagination />
+      <Pagination count={totalUser} />
     </div>
   );
 };

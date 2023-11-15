@@ -6,6 +6,5 @@ export const FormDataSchema = z.object({
   email: z.string().min(1, "Email is required").email("Invalid email address"),
   subject: z.string().min(1, "Subject is required"),
   skills: z.string().min(1, "Skills is required"),
-  imageUrl: z.string(),
   bio: z.string(),
 });
