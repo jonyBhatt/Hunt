@@ -7,7 +7,7 @@ const HeroSection = () => {
       <div className="flex  gap-6 md:flex-row xs:flex-col text-center md:text-start justify-around items-center">
         {/* Slogan */}
         <div>
-          <h2 className='text-4xl  font-Kanit font-bold'>From Goals to Greatness</h2>
+          <h2 className='text-4xl  font-Kanit font-bold mb-5'>From Goals to Greatness</h2>
           <span className='text-sm md:text-lg md:tracking-widest  font-Rale'>Where Mentors and Students <br /> Unite for Success.</span>
         </div>
               {/* image */}

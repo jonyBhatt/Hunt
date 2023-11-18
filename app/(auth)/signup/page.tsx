@@ -22,8 +22,8 @@ const Register = async () => {
             <span className="text-sm text-gray-600">
               Already have a account?
             </span>
-            <Link href="/signup" className="font-light text-sm text-primary">
-              Register Here
+            <Link href="/signin" className="font-light text-sm text-primary">
+              Login Here
             </Link>
           </div>
         </div>

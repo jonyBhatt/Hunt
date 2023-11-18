@@ -3,7 +3,7 @@ import React from "react";
 import { Button } from "../ui/button";
 import { signOut } from "next-auth/react";
 
-const Logout = () => {
+const Logout = ({ className}:{className:string}) => {
   return (
     <Button
       onClick={() =>
@@ -11,6 +11,7 @@ const Logout = () => {
           callbackUrl: "/",
         })
       }
+      className={className}
     >
       Logout
     </Button>

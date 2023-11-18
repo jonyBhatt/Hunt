@@ -24,6 +24,9 @@ export async function createUser({
     });
 
     console.log(newUser);
+    return {
+      success:true
+    }
   } catch (error) {
     console.log(error);
   }

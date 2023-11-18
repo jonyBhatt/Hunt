@@ -8,3 +8,11 @@ export const FormDataSchema = z.object({
   skills: z.string().min(1, "Skills is required"),
   bio: z.string(),
 });
+
+export const mentorFormSchema = z.object({
+  title: z.string().min(1, { message: "Title Required" }),
+  description: z.string().min(2, { message: "description cannot be empty" }),
+  cat: z.string() || undefined,
+  imageUrl: z.string() || "",
+
+});

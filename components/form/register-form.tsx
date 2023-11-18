@@ -3,7 +3,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
-
+import { useRouter } from "next/navigation";
 import { registerSchema } from "@/lib/validation/authValidation";
 import { Button } from "@/components/ui/button";
 import {
@@ -17,6 +17,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { createUser } from "@/server/authAction";
 const RegisterFrom = () => {
+  const router = useRouter();
   const form = useForm<z.infer<typeof registerSchema>>({
     resolver: zodResolver(registerSchema),
     defaultValues: {
@@ -31,8 +32,11 @@ const RegisterFrom = () => {
   // 2. Define a submit handler.
   async function onSubmit(values: z.infer<typeof registerSchema>) {
     // console.log(values);
-    await createUser(values);
-    form.reset()
+    const success = await createUser(values);
+    form.reset();
+    if (success) {
+      router.push("/login");
+    }
   }
   return (
     <Form {...form}>

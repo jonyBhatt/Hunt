@@ -6,8 +6,11 @@ import {
   BarChart2,
   Users,
   Cog,
-  HelpCircle
+  HelpCircle,
+  CupSoda,
+  Store,
 } from "lucide-react";
+import { MdOutlineAddHomeWork, MdOutlinePostAdd } from "react-icons/md";
 export const topics = [
   {
     id: 1,
@@ -197,6 +200,122 @@ export const adminSideBar = [
       {
         title: "Teams",
         url: "/dashboard/teams",
+        icon: <Users />,
+      },
+    ],
+  },
+  {
+    title: "User",
+    list: [
+      {
+        title: "Settings",
+        url: "/dashboard/settings",
+        icon: <Cog />,
+      },
+      {
+        title: "Help",
+        url: "/dashboard/help",
+        icon: <HelpCircle />,
+      },
+    ],
+  },
+];
+
+export const mentorSideBar = [
+  {
+    title: "Featured",
+    list: [
+      {
+        title: "Dashboard",
+        url: "/mentor-dashboard",
+        icon: <LayoutDashboard />,
+      },
+      {
+        title: "Event",
+        url: "/mentor-dashboard/event",
+        icon: <CupSoda />,
+      },
+      {
+        title: "Post",
+        url: "/mentor-dashboard/post",
+        icon: <MdOutlinePostAdd size={25} />,
+      },
+    ],
+  },
+  {
+    title: "Resource",
+    list: [
+      {
+        title: "Jobs",
+        url: "/mentor-dashboard/jobs",
+        icon: <MdOutlineAddHomeWork size={25} />,
+      },
+      {
+        title: "Forem Store",
+        url: "/mentor-dashboard/store",
+        icon: <Store />,
+      },
+      {
+        title: "Teams",
+        url: "/mentor-dashboard/teams",
+        icon: <Users />,
+      },
+    ],
+  },
+  {
+    title: "User",
+    list: [
+      {
+        title: "Settings",
+        url: "/dashboard/settings",
+        icon: <Cog />,
+      },
+      {
+        title: "Help",
+        url: "/dashboard/help",
+        icon: <HelpCircle />,
+      },
+    ],
+  },
+];
+
+export const userSideBar = [
+  {
+    title: "Featured",
+    list: [
+      {
+        title: "Dashboard",
+        url: "/user-dashboard",
+        icon: <LayoutDashboard />,
+      },
+      {
+        title: "Events",
+        url: "/user-dashboard/event",
+        icon: <CupSoda />,
+      },
+      {
+        title: "Posts",
+        url: "/user-dashboard/post",
+        icon: <MessageSquareDashed />,
+      },
+    ],
+  },
+  {
+    title: "Resource",
+    list: [
+      {
+        title: "Market",
+        url: "/user-dashboard/jobs",
+        icon: <MdOutlineAddHomeWork size={25} />,
+      },
+      {
+        title: "Forem Store",
+        url: "/user-dashboard/store",
+        icon: <Store />,
+      },
+      {
+        title: "Teams",
+        url: "/user-dashboard/teams",
         icon: <Users />,
       },
     ],
