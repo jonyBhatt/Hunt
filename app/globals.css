@@ -157,4 +157,12 @@
       rgba(255, 255, 255, 1) 100%
     );
   }
+
+  .custom_truncate {
+    width: 300px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
 }

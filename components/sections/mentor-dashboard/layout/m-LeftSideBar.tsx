@@ -1,10 +1,14 @@
 import Logout from "@/components/shared/Logout";
+import { getUserData } from "@/server/getUserDetails";
 import { mentorSideBar } from "@/utils/constants";
 import MenuLink from "@/utils/sidebarLinks";
 import Image from "next/image";
 import React from "react";
 
-const MentorLeftSidebar = () => {
+const MentorLeftSidebar = async () => {
+  const mentor = await getUserData()
+  // console.log(mentor);
+  
   return (
     <div className="sticky top-10">
       <div className="flex items-center gap-5 mb-4">

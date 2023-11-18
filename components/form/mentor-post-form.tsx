@@ -3,6 +3,8 @@
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
+import { useRouter } from "next/navigation";
+
 import { mentorFormSchema } from "@/lib/validation/FormDataSchema";
 
 import { Button } from "@/components/ui/button";
@@ -25,8 +27,11 @@ import {
   SelectItem,
 } from "../ui/select";
 import UploadFile from "@/lib/UploadThingButton";
+import { createPost } from "@/lib/actions/mentor/post-actions";
+import {toast} from 'react-hot-toast'
 
 const MentorPostForm = () => {
+  const router = useRouter()
   const form = useForm<z.infer<typeof mentorFormSchema>>({
     resolver: zodResolver(mentorFormSchema),
     defaultValues: {
@@ -38,8 +43,33 @@ const MentorPostForm = () => {
   });
 
   // 2. Define a submit handler.
-  function onSubmit(values: z.infer<typeof mentorFormSchema>) {
+  async function onSubmit(values: z.infer<typeof mentorFormSchema>) {
     console.log(values);
+    const res = await createPost(values);
+    if (res?.success) {
+      // alert("Posted successful");
+      form.reset()
+      toast.success("Post successful", {
+        style: {
+          background: "#770d72",
+          padding: "16px",
+          color: "#fff",
+        },
+        iconTheme: {
+          primary: "#021E20",
+          secondary: "#c8f6f9",
+        },
+      });
+
+      router.push("/mentor-dashboard/post")
+
+    }
+
+    if (res?.error) {
+      console.log({
+        error: res.error,
+      });
+    }
   }
 
   return (

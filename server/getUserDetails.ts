@@ -15,5 +15,11 @@ export async function getUserData() {
     },
   });
 
-  return currentUser;
+  const mentor = await prisma.mentor.findUnique({
+    where: {
+      email,
+    },
+  });
+
+  return { currentUser, mentor };
 }

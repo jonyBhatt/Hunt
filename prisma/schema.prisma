@@ -59,12 +59,13 @@ model Post {
   title       String
   description String
   likes       String[] @db.ObjectId
+  imageUrl    String
 
   categoryName String
   category     Category? @relation(fields: [categoryName], references: [name])
 
-  autorId String @db.ObjectId
-  author   User   @relation(fields: [autorId], references: [id])
+  authorEmail String
+  author      User   @relation(fields: [authorEmail], references: [email])
 
   comments Comment[]
 

@@ -19,7 +19,7 @@ openssl rand -base64 32
 > We can check with user.isActive if admin click on active then isActive will  be true otherwise false
 
 # Mentor
-> Create, Update, Delete Post []    
+> Create, Update, Delete Post [Create]    
 > Create, Update, Delete, Reshedule Event
 > Forem Shop --> Add, update, delete products
 > Collaboration **

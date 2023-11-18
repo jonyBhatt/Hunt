@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { kanit, rale } from "@/lib/fonts/font";
 import { getServerSession } from "next-auth";
 import AuthProvider from "@/utils/Provider";
+import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
   title: "Hunt",
@@ -18,7 +19,9 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={`${kanit.variable} ${rale.variable}`}>
-        <AuthProvider session={session}>{children}</AuthProvider>
+        <AuthProvider session={session}>
+          {children} <Toaster />
+        </AuthProvider>
       </body>
     </html>
   );

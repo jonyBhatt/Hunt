@@ -6,6 +6,7 @@ import * as z from "zod";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { useSession } from "next-auth/react";
+import {useRouter} from 'next/navigation'
 
 import { Button } from "@/components/ui/button";
 import {
@@ -26,6 +27,7 @@ import {
   SelectContent,
   SelectItem,
 } from "../ui/select";
+import UploadFile from "@/lib/UploadThingButton";
 
 const steps = [
   {
@@ -42,6 +44,7 @@ const steps = [
 ];
 
 const MentorBoard = () => {
+  const router = useRouter()
   const { data: session } = useSession();
   // console.log(session?.user);
 
@@ -79,7 +82,8 @@ const MentorBoard = () => {
        console.log(values);
     try {
       const res = await axios.post("/api/onboard", values);
-      console.log(res.data);
+      // console.log(res.data);
+      router.push("/mentor-dashboard")
     } catch (error) {
       console.log(error);
     }
@@ -287,6 +291,26 @@ const MentorBoard = () => {
                     )}
                   />
                 </div>
+
+                {/* <div className="sm:col-span-12">
+                  <FormField
+                    control={form.control}
+                    name="imageUrl"
+                    render={({ field }) => (
+                      <FormItem className="w-full">
+                        <FormLabel>Profile Picture</FormLabel>
+                        <FormControl>
+                          <UploadFile
+                            endpoint="imageUploader"
+                            onChange={field.onChange}
+                            value={field.value}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div> */}
               </div>
             </motion.div>
           )}

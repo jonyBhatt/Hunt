@@ -35,7 +35,7 @@ const RegisterFrom = () => {
     const success = await createUser(values);
     form.reset();
     if (success) {
-      router.push("/login");
+      router.push("/signin");
     }
   }
   return (

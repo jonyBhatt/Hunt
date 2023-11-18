@@ -5,6 +5,7 @@ import { X } from "lucide-react";
 import "@uploadthing/react/styles.css";
 
 import { UploadButton, UploadDropzone } from "@/utils/uploadthing";
+import {toast} from 'react-hot-toast'
 interface FileUploadProps {
   endpoint: "imageUploader";
   value: string;
@@ -27,10 +28,10 @@ export default function UploadFile({
           height={500}
         />
         <button
-          className="bg-red-500 text-white p-1 absolute top-0 right-0 shadow-sm rounded-full"
+          className="bg-red-500 text-black p-1 absolute top-0 right-0 shadow-sm rounded-full"
           onClick={() => onChange("")}
         >
-          <X className="h-4 w-4" />
+          <X className="h-6 w-6 text-black bg-red-500" />
         </button>
       </div>
     );
@@ -42,7 +43,19 @@ export default function UploadFile({
         onClientUploadComplete={(res) => {
           // Do something with the response
           onChange(res?.[0].url);
-          alert("Upload Completed");
+          // alert("Upload Completed");
+           toast("Upload Completed", {
+             style: {
+               background: "#770d72",
+               padding: "16px",
+               color: "#fff",
+               borderRadius:"10px"
+             },
+             iconTheme: {
+               primary: "#021E20",
+               secondary: "#c8f6f9",
+             },
+           });
         }}
         onUploadError={(error: Error) => {
           // Do something with the error.
