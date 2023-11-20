@@ -57,3 +57,13 @@ export type PostProps = {
   date: Date;
   imageUrl: string;
 };
+
+export type EventsProps = {
+  id: string,
+  title: string,
+  content: string,
+  start: string,
+  end: string,
+  location: string,
+  date:string
+}

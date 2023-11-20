@@ -26,12 +26,16 @@ openssl rand -base64 32
 > Create, Update, Delete, Jobs
 > Can report about any user or other mentor. admin can handle this
 
-
+** Biplob Da **
 1. Homepage
 2. Auth and authorization
+
+** Rubayat **
 3. Admin can view all post
-4. Admin can view all users
-5. Mentor Create, Update, Delete Post []    
-6. Create, Update, Delete, Reshedule Event
-7. Mentor Onboard
-8. Admin can ban user
+4. Admin can ban user
+5. Mentor Onboard
+
+** Jony **
+6. Mentor can add product to forem shop
+7. Mentor Create, Update, Delete Post []    
+8. Create, Update, Delete, Reshedule Event

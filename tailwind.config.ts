@@ -87,6 +87,7 @@ module.exports = withUt({
       fontFamily: {
         Kanit: ["var(--font-Kanit)"],
         Rale: ["var(--font-Raleway)"],
+        Anonymous: ["var(--font-Anonymous"],
       },
     },
   },

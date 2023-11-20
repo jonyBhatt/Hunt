@@ -2,6 +2,7 @@
 import { usePathname } from "next/navigation";
 import { Search, BellRing, GripVertical } from "lucide-react";
 import { Input } from "@/components/ui/input";
+import { ModeToggle } from "@/utils/mode-toggle";
 const Navbar = () => {
   const pathname = usePathname();
   const path = pathname.split("/").pop();
@@ -26,6 +27,9 @@ const Navbar = () => {
             <GripVertical className="cursor-pointer  " />
           </div>
 
+          <div className="">
+            {/* <ModeToggle /> */}
+          </div>
         </div>
       </div>
     </div>

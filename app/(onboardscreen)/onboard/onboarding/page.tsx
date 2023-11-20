@@ -23,7 +23,7 @@ const Onboarding = () => {
               <Image src="/student.png" alt="student" width={30} height={30} />
             </div>
             <span className="text-md font-Rale font-medium">
-              Are you want to learn from mentor?
+              Do you want to learn from mentor?
             </span>
           </div>
           <div
@@ -36,7 +36,7 @@ const Onboarding = () => {
               <Image src="/teacher.png" alt="student" width={30} height={30} />
             </div>
             <span className="text-md font-Rale font-medium">
-              Are you want to teach others?
+              Do you want to teach others?
             </span>
           </div>
         </div>

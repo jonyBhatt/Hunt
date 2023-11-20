@@ -1,9 +1,10 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { kanit, rale } from "@/lib/fonts/font";
+import { anonymous, kanit, rale } from "@/lib/fonts/font";
 import { getServerSession } from "next-auth";
 import AuthProvider from "@/utils/Provider";
 import { Toaster } from "react-hot-toast";
+import { ThemeProvider } from "@/utils/theme-provider";
 
 export const metadata: Metadata = {
   title: "Hunt",
@@ -18,7 +19,9 @@ export default async function RootLayout({
   const session = await getServerSession();
   return (
     <html lang="en">
-      <body className={`${kanit.variable} ${rale.variable}`}>
+      <body
+        className={`${kanit.variable} ${rale.variable} ${anonymous.variable}`}
+      >
         <AuthProvider session={session}>
           {children}
           <Toaster />

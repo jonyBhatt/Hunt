@@ -26,7 +26,7 @@ model User {
   hasNotification Boolean?
   following       String[] @db.ObjectId
   onboard         Boolean  @default(false)
-  // isActive Boolean? @default(false)
+  isBan           Boolean  @default(false)
 
   createdAt DateTime? @default(now())
   updateAt  DateTime? @default(now())
@@ -59,12 +59,13 @@ model Post {
   title       String
   description String
   likes       String[] @db.ObjectId
+  imageUrl    String
 
   categoryName String
   category     Category? @relation(fields: [categoryName], references: [name])
 
-  autorId String @db.ObjectId
-  author   User   @relation(fields: [autorId], references: [id])
+  authorEmail String
+  author      User   @relation(fields: [authorEmail], references: [email])
 
   comments Comment[]
 

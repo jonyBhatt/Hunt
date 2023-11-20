@@ -8,7 +8,7 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex">
+    <div className="flex ">
       <div className=" p-5 bg-slate-100">
         <RoleLeftSideBar />
       </div>
