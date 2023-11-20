@@ -1,20 +1,23 @@
-import MentorPostForm from '@/components/form/mentor-post-form';
-import React from 'react'
+import MentorPostForm from "@/components/form/mentor-post-form";
+import AllPosts from "@/components/sections/mentor-dashboard/AllPosts";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import React from "react";
 
 const Post = () => {
   return (
-    <div className="my-8 container mx-auto">
-      <div>
-        <h2 className="mb-6 text-3xl font-bold font-Rale">
-          What is on your mind
-        </h2>
-        <span className=" font-Rale text-md">Share your experience</span>
+    <div className="my-8 container mx-auto ">
+      <div className="flex justify-between items-center">
+        <h2 className=" text-3xl font-bold font-Rale">Your Posts</h2>
+        <Link href="/mentor-dashboard/post/create-post">
+          <Button size="lg">Create</Button>
+        </Link>
       </div>
-      <div className="my-6">
-        <MentorPostForm />
+      <div className="my-8">
+        <AllPosts />
       </div>
     </div>
   );
-}
+};
 
-export default Post
+export default Post;

@@ -27,3 +27,11 @@ openssl rand -base64 32
 > Can report about any user or other mentor. admin can handle this
 
 
+1. Homepage
+2. Auth and authorization
+3. Admin can view all post
+4. Admin can view all users
+5. Mentor Create, Update, Delete Post []    
+6. Create, Update, Delete, Reshedule Event
+7. Mentor Onboard
+8. Admin can ban user
