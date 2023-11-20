@@ -47,3 +47,13 @@ export type Post = {
   status: "pending" | "processing" | "success" | "failed";
   email: string;
 };
+
+export type PostProps = {
+  id: string;
+  title: string;
+  description: string;
+  cat: string;
+  authorName: string;
+  date: Date;
+  imageUrl: string;
+};
