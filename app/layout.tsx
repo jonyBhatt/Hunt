@@ -20,7 +20,7 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${kanit.variable} ${rale.variable} ${anonymous.variable}`}
+        className={`${kanit.variable} ${rale.variable} `}
       >
         <AuthProvider session={session}>
           {children}

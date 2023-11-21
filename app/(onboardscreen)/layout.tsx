@@ -13,7 +13,7 @@ export default async function OnboardLayout({
           <div className="relative w-8 h-8">
             <Image src="/logo.svg" alt="logo" fill className="rounded-full" />
           </div>
-          <Logout />
+          <Logout className="font-bold" />
         </div>
       </nav>
 

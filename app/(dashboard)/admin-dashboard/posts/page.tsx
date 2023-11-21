@@ -30,7 +30,7 @@ const Post = async () => {
         <tbody>
           {posts.map((post) => (
             <tr key={post.id}>
-              <td>{post.authorEmail}</td>
+              <td>{post.author.email}</td>
               <td className="text-sm max-w-[300px] truncate">{post.title}</td>
               <td className="text-sm truncate max-w-[300px]  w-6 ">
                 {post.description}
