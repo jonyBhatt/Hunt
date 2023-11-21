@@ -97,3 +97,10 @@ model Notification {
 
   createdAt DateTime @default(now())
 }
+
+model Store {
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
+  title    String
+  imageUrl String
+  cost     String
+}

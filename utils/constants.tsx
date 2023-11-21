@@ -252,7 +252,7 @@ export const mentorSideBar = [
       },
       {
         title: "Forem Store",
-        url: "/store",
+        url: "/mentor-dashboard/forem-store",
         icon: <Store />,
       },
       {

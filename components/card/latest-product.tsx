@@ -1,13 +1,17 @@
 import Image from "next/image";
-
-const LatestProductCard = () => {
+type CardType = {
+  title: string,
+  url: string,
+  cost:string
+}
+const LatestProductCard = ({title, url, cost}:CardType) => {
   return (
     <div className="my-12 flex flex-col items-center">
       {/* Wrapper div for the card */}
       <div className="w-[300px] h-[300px] bg-gray-400 flex justify-center items-center">
         {/* Image component from Next.js for displaying the image */}
         <Image
-          src="/forem/e1.jpg"
+          src={url}
           alt="e1"
           width={200}
           height={200}
@@ -16,9 +20,9 @@ const LatestProductCard = () => {
       </div>
       <div className="my-2 cursor-pointer text-center group">
         <h3 className="font-Rale font-semibold group-hover:border-b-4 group-hover:border-b-gray-500">
-          DEV Pride Mug
+          {title}
         </h3>
-        <span className="text-lg font-light font-Rale">125 &#2547;</span>
+        <span className="text-lg font-light font-Rale">{cost} &#2547;</span>
       </div>
     </div>
   );

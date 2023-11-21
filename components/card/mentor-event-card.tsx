@@ -33,9 +33,9 @@ const MentorEvent = ({
             Organizer: <b>Nike</b>
           </span>
           <span>Location: {location}</span>
-          <span>Date: {location}</span>
-          <span>Start: {location}</span>
-          <span>End: {location}</span>
+          <span>Date: {date}</span>
+          <span>Start: {start}</span>
+          <span>End: {end}</span>
         </CardDescription>
         <CardContent className="line-clamp-4 my-4">{content}</CardContent>
         <CardFooter className="mb-4">
